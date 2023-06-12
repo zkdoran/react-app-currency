@@ -12,9 +12,6 @@ export const listCountries = () => {
   fetch('https://api.frankfurter.app/currencies')
   .then(checkStatus)
   .then(json)
-  .then((data) => {
-    
-  })
   .catch((error) => {
     console.log(error);
   })
