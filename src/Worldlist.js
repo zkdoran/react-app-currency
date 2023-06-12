@@ -1,3 +1,4 @@
+import React from 'react';
 import { json, checkStatus, listCountries } from './utils';
 
 class Worldlist extends React.Component {
