@@ -1,6 +1,7 @@
 {
   "name": "react-app-currency",
   "version": "0.1.0",
+  "homepage": "https://atomiccow87.github.io/react-app-currency/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -14,6 +15,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
