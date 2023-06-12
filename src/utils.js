@@ -8,7 +8,7 @@ export const checkStatus = (response) => {
 
 export const json = (response) => response.json()
 
-export const listcountries = () => {   
+export const listCountries = () => {   
   fetch('https://api.frankfurter.app/currencies')
   .then(checkStatus)
   .then(json)
