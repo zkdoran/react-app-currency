@@ -13,16 +13,9 @@ export const listcountries = () => {
   .then(checkStatus)
   .then(json)
   .then((data) => {
-    if (data.Response === 'False') {
-      throw new Error(data.Error);
-    }
-    if (data.Response === 'True') {
-      console.log(data);
-      this.setState({ countryList: data, error: '' });
-    }
+    
   })
   .catch((error) => {
-    this.setState({ error: error.message });
     console.log(error);
   })
 }
