@@ -32,6 +32,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.5.0"],\
             ["bootstrap", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:5.3.0"],\
+            ["dinero.js", "npm:1.9.1"],\
             ["gh-pages", "npm:5.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:18.2.0"],\
@@ -7834,6 +7835,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["dinero.js", [\
+        ["npm:1.9.1", {\
+          "packageLocation": "./.yarn/cache/dinero.js-npm-1.9.1-1129c07918-f033ad0cda.zip/node_modules/dinero.js/",\
+          "packageDependencies": [\
+            ["dinero.js", "npm:1.9.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["dir-glob", [\
         ["npm:3.0.1", {\
           "packageLocation": "./.yarn/cache/dir-glob-npm-3.0.1-1aea628b1b-fa05e18324.zip/node_modules/dir-glob/",\
@@ -14972,6 +14982,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.5.0"],\
             ["bootstrap", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:5.3.0"],\
+            ["dinero.js", "npm:1.9.1"],\
             ["gh-pages", "npm:5.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:18.2.0"],\
