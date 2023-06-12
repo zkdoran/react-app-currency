@@ -9,7 +9,6 @@ const App = () => {
     <Router basename="/react-app-currency">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <p>test</p>
-        <Link className="navbar-brand" to="/">Broke or Balling</Link>
       </nav>
       <Switch>
         <Route path="/" exact component={Home} />
