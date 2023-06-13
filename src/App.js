@@ -5,12 +5,11 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from './Home';
 import Converter from './Converter';
 import Worldlist from './Worldlist';
-import Countries from './Countries';
 
 const App = () => {
   return (
     <Router basename="/react-app-currency">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <Link className="navbar-brand" to="/">Flush or Broke</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

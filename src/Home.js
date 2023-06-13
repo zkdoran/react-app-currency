@@ -40,12 +40,12 @@ class StartOver extends React.Component {
     const { currencies, selectStartValue, selectEndValue } = this.state;
 
     return (
-      <div className="container text-center">
-        <div className="row g-2">
+      <div className="container text-center px-4">
+        <div className="row align-items-center row-cols-2 gx-5 ">
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' value={selectStartValue} onChange={this.handleChange}>
-                <option selected>Choose your Starting Country</option>
+                <option selected disabled>Choose your Starting Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
                 })}
@@ -54,27 +54,27 @@ class StartOver extends React.Component {
             </div>
           </div>
           <div className="col-md">
-            <div className='form-floating input-group mb-3'>
+            <div className='form-floating input-group'>
               <span className='input-group-text'>$</span>
               <input type='number' className='form-control' placeholder='1' value='1' />
               <span className='input-group-text'>.00</span>
             </div>
           </div>
         </div>
-        <div className="row g-2">
+        <div className="row justify-content-between gx-5">
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' value={selectEndValue} onChange={this.handleChange}>
-                <option selected>Choose your Destination Country</option>
+                <option selected disabled>Choose your Destination Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
                 })}
               </select>
-              <label for='floatingSelectGrid'>Starting Country</label>
+              <label for='floatingSelectGrid'>Destination Country</label>
             </div>
           </div>
           <div className="col-md">
-
+            <p>DIVIDER test</p>
           </div>
         </div>
       </div>
