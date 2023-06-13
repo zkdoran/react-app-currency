@@ -25,15 +25,17 @@ class StartOver extends React.Component {
 
 
   render() {
+    const { currencies } = this.state;
+
     return (
       <div className="row">
         <div className="col">
           <select>
-            <option>Option 1</option>
+            {Object.keys((currencies) => ((sym) => <option key={sym} value={sym}>{currencies[sym]}</option>))}
           </select>
         </div>
         <div className="col">
-
+          <input></input>
         </div>
       </div>
     )
