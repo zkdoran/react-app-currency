@@ -5,10 +5,14 @@ class ListCountries extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      countryList: [],
+      entries: null,
     };
 
     this.countries = this.countries.bind(this);
+  }
+
+  handleChanges(event) {
+    this.setState({ entries: event.target.value })
   }
 
   countries() {   
@@ -16,13 +20,7 @@ class ListCountries extends React.Component {
     .then(checkStatus)
     .then(json)
     .then((data) => {
-      if (data.Response === 'False') {
-        throw new Error(data.Error);
-      }
-      if (data.Response === 'True') {
-        console.log(data);
-        this.setState({ countryList: data, error: '' });
-      }
+      this.setState({ entries: data });
     })
     .catch((error) => {
       this.setState({ error: error.message });
@@ -31,11 +29,11 @@ class ListCountries extends React.Component {
   }
 
   render() {
-    const { countryList } = this.state
-    console.log(countryList);
+    const { entries } = this.state;
+    console.log(entries);
     return (
       <div>
-        <p>{countryList}</p>
+        <select value="" onChange={this.handleChanges}></select>
       </div>
     )
   }
