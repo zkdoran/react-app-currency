@@ -7,15 +7,9 @@ class ListCountries extends React.Component {
     this.state = {
       entries: null,
     };
-
-    this.countries = this.countries.bind(this);
   }
 
-  handleChanges(event) {
-    this.setState({ entries: event.target.value })
-  }
-
-  countries() {   
+  componentDidMount () {   
     fetch('https://api.frankfurter.app/currencies')
     .then(checkStatus)
     .then(json)
@@ -32,8 +26,12 @@ class ListCountries extends React.Component {
     const { entries } = this.state;
     console.log(entries);
     return (
-      <div>
-        <select value="" onChange={this.handleChanges}></select>
+      <div className='container m-5'>
+        <select className='custom-select'>
+          {entries.map((d) => (
+            <option key={d[i]} value={d[i]}>{d[i][0]}</option>
+          ))}
+        </select>
       </div>
     )
   }
