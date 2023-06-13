@@ -6,7 +6,14 @@ class StartOver extends React.Component {
     super(props);
     this.state = {
       currencies: {},
+      selectValue: '',
     };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ selectValue: event.target.value });
   }
 
   componentDidMount () {   
@@ -25,13 +32,13 @@ class StartOver extends React.Component {
 
 
   render() {
-    const { currencies } = this.state;
+    const { currencies, selectValue } = this.state;
 
     return (
       <div className="row g-2">
         <div className="col-md">
           <div className='form-floating'>
-            <select className='form-select' id='floatingSelectGrid'>
+            <select className='form-select' id='floatingSelectGrid' value={selectValue} onChange={this.handleChange}>
               {Object.keys(currencies).map((sym) => {
                 return <option key={sym} value={sym}>{currencies[sym]}</option>
               })}
