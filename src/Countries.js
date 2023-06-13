@@ -28,9 +28,7 @@ class ListCountries extends React.Component {
     return (
       <div className='container m-5'>
         <select className='custom-select'>
-          {entries.map((d) => (
-            <option key={d[i]} value={d[i]}>{d[i][0]}</option>
-          ))}
+          
         </select>
       </div>
     )
