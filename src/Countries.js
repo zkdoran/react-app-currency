@@ -1,4 +1,6 @@
-import React from 'react';
+//Going with fetch on each page.
+
+/* import React from 'react';
 import { json, checkStatus } from './utils';
 
 class ListCountries extends React.Component {
@@ -28,7 +30,7 @@ class ListCountries extends React.Component {
     return (
       <div className='container m-5'>
         <select className='custom-select'>
-          
+
         </select>
       </div>
     )
@@ -36,4 +38,4 @@ class ListCountries extends React.Component {
 
 }
 
-export default ListCountries;
+export default ListCountries; */
