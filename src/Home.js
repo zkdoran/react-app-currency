@@ -6,14 +6,19 @@ class StartOver extends React.Component {
     super(props);
     this.state = {
       currencies: {},
-      selectValue: '',
+      selectStartValue: 'USD',
+      selectEndValue: 'EUR',
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ selectValue: event.target.value });
+    const value = event.target.value;
+    this.setState({ 
+      ...this.state,
+      [event.targer.name]: value
+    });
   }
 
   componentDidMount () {   
@@ -32,24 +37,44 @@ class StartOver extends React.Component {
 
 
   render() {
-    const { currencies, selectValue } = this.state;
+    const { currencies, selectStartValue, selectEndValue } = this.state;
 
     return (
-      <div className="row g-2">
-        <div className="col-md">
-          <div className='form-floating'>
-            <select className='form-select' id='floatingSelectGrid' value={selectValue} onChange={this.handleChange}>
-              {Object.keys(currencies).map((sym) => {
-                return <option key={sym} value={sym}>{currencies[sym]}</option>
-              })}
-            </select>
-            <label for='floatingSelectGrid'>Starting Country</label>
+      <div className="container text-center">
+        <div className="row g-2">
+          <div className="col-md">
+            <div className='form-floating'>
+              <select className='form-select' id='floatingSelectGrid' value={selectStartValue} onChange={this.handleChange}>
+                <option selected>Choose your Starting Country</option>
+                {Object.keys(currencies).map((sym) => {
+                  return <option key={sym} value={sym}>{currencies[sym]}</option>
+                })}
+              </select>
+              <label for='floatingSelectGrid'>Starting Country</label>
+            </div>
+          </div>
+          <div className="col-md">
+            <div className='form-floating input-group mb-3'>
+              <span className='input-group-text'>$</span>
+              <input type='number' className='form-control' placeholder='1' value='1' />
+              <span className='input-group-text'>.00</span>
+            </div>
           </div>
         </div>
-        <div className="col-md">
-          <div className='form-floating'>
-            <input type='number' className='form-control' id='floatingInputGrid' placeholder='1' value='1' />
-            <label for="floatingInputGrid">How much you got?</label>
+        <div className="row g-2">
+          <div className="col-md">
+            <div className='form-floating'>
+              <select className='form-select' id='floatingSelectGrid' value={selectEndValue} onChange={this.handleChange}>
+                <option selected>Choose your Destination Country</option>
+                {Object.keys(currencies).map((sym) => {
+                  return <option key={sym} value={sym}>{currencies[sym]}</option>
+                })}
+              </select>
+              <label for='floatingSelectGrid'>Starting Country</label>
+            </div>
+          </div>
+          <div className="col-md">
+
           </div>
         </div>
       </div>
