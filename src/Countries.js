@@ -31,10 +31,11 @@ class ListCountries extends React.Component {
   }
 
   render() {
-
+    const { countryList } = this.state
+    console.log(countryList);
     return (
       <div>
-        <p>countries test</p>
+        <p>{countryList}</p>
       </div>
     )
   }

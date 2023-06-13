@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from './Home';
 import Converter from './Converter';
 import Worldlist from './Worldlist';
+import Countries from './Countries';
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
         </div>      
       </nav>
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Countries} />
         <Route path="/Converter/" component={Converter} />
         <Route path="/Worldlist/" component={Worldlist} />
       </Switch>
