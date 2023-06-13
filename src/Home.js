@@ -1,5 +1,5 @@
 import React from 'react';
-import { listCountries } from './utils';
+import Countries from './Countries';
 
 class StartOver extends React.Component {
   render() {

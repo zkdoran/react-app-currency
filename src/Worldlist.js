@@ -1,5 +1,6 @@
 import React from 'react';
-import { json, checkStatus, listCountries } from './utils';
+import { json, checkStatus } from './utils';
+import Countries from './Countries';
 
 class Worldlist extends React.Component {
   constructor(props) {
