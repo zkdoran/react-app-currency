@@ -6,8 +6,8 @@ class StartOver extends React.Component {
     super(props);
     this.state = {
       currencies: {},
-      selectStartValue: 'USD',
-      selectEndValue: 'EUR',
+      selectStartValue: '',
+      selectEndValue: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -17,7 +17,7 @@ class StartOver extends React.Component {
     const value = event.target.value;
     this.setState({ 
       ...this.state,
-      [event.targer.name]: value
+      [event.target.name]: value
     });
   }
 
@@ -45,7 +45,7 @@ class StartOver extends React.Component {
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' value={selectStartValue} onChange={this.handleChange}>
-                <option selected disabled>Choose your Starting Country</option>
+                <option disabled>Choose your Starting Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
                 })}
@@ -61,7 +61,7 @@ class StartOver extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row justify-content-between gx-5">
+        <div className="row justify-content-between gx-5 mt-5">
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' value={selectEndValue} onChange={this.handleChange}>
@@ -71,10 +71,15 @@ class StartOver extends React.Component {
                 })}
               </select>
               <label for='floatingSelectGrid'>Destination Country</label>
+              <h1>Check how you measure up 1 vs. 1!</h1>
             </div>
           </div>
           <div className="col-md">
             <p>DIVIDER test</p>
+          </div>
+          <div className="col-md">
+            <button type="button" className="btn btn-danger btn-lg" value="Submit">Test Your Might</button>
+            <h1>Check how you measure up againse The World!</h1>
           </div>
         </div>
       </div>
