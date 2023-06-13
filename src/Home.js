@@ -1,5 +1,5 @@
 import React from 'react';
-import Countries from './Countries';
+import { json, checkStatus } from './utils';
 
 class StartOver extends React.Component {
 
@@ -8,7 +8,6 @@ class StartOver extends React.Component {
     return (
       <div>
         <p>test</p>
-        <Countries />
       </div>
     )
   }

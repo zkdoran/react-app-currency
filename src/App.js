@@ -30,9 +30,9 @@ const App = () => {
         </div>      
       </nav>
       <Switch>
-        <Route path="/" exact component={Countries} />
-        <Route path="/Converter/" component={Converter} />
-        <Route path="/Worldlist/" component={Worldlist} />
+        <Route path="/" exact component={Home} />
+        <Route path="/Converter/:stuff" component={Converter} />
+        <Route path="/Worldlist/:stuff" component={Worldlist} />
       </Switch>
     </Router>
   );

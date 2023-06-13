@@ -1,6 +1,5 @@
 import React from 'react';
 import { json, checkStatus } from './utils';
-import Countries from './Countries';
 
 class Converter extends React.Component {
   constructor(props) {
