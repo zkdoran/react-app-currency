@@ -29,12 +29,15 @@ const App = () => {
           </ul>
         </div>      
       </nav>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/Converter/:stuff" component={Converter} />
-        <Route path="/Worldlist/:stuff" component={Worldlist} />
-      </Switch>
+      <div className="container text-center">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Converter/:stuff" component={Converter} />
+          <Route path="/Worldlist/:stuff" component={Worldlist} />
+        </Switch>
+      </div>
     </Router>
+    
   );
 }
 
