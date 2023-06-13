@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router basename="/react-app-currency">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">Are you Rich?</Link>
+        <Link className="navbar-brand" to="/">Flush or Broke</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

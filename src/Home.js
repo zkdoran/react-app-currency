@@ -5,7 +5,7 @@ class StartOver extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currencies: null,
+      currencies: {},
     };
   }
 
@@ -28,14 +28,22 @@ class StartOver extends React.Component {
     const { currencies } = this.state;
 
     return (
-      <div className="row">
-        <div className="col">
-          <select>
-            {Object.keys((currencies) => ((sym) => <option key={sym} value={sym}>{currencies[sym]}</option>))}
-          </select>
+      <div className="row g-2">
+        <div className="col-md">
+          <div className='form-floating'>
+            <select className='form-select' id='floatingSelectGrid'>
+              {Object.keys(currencies).map((sym) => {
+                return <option key={sym} value={sym}>{currencies[sym]}</option>
+              })}
+            </select>
+            <label for='floatingSelectGrid'>Starting Country</label>
+          </div>
         </div>
-        <div className="col">
-          <input></input>
+        <div className="col-md">
+          <div className='form-floating'>
+            <input type='number' className='form-control' id='floatingInputGrid' placeholder='1' value='1' />
+            <label for="floatingInputGrid">How much you got?</label>
+          </div>
         </div>
       </div>
     )
