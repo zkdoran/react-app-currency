@@ -4,7 +4,12 @@ import { json, checkStatus } from './utils';
 class Worldlist extends React.Component {
   constructor(props) {
     super(props);
-    this.state = (props.location && props.location.state) || {};
+    this.state = (props.location && props.location.state) || 
+    {
+      currencies: {},
+      selectStartValue: 'USD',
+      selectEndValue: 'EUR',
+    };
   }
 
   render() {
