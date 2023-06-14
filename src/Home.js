@@ -6,8 +6,8 @@ class StartOver extends React.Component {
     super(props);
     this.state = {
       currencies: {},
-      selectStartValue: '',
-      selectEndValue: '',
+      selectStartValue: 'USD',
+      selectEndValue: 'EUR',
     };
 
     this.handleChange = this.handleChange.bind(this);
