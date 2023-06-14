@@ -20,10 +20,10 @@ const App = () => {
               <Link className="nav-link" to="/">Start Over</Link>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" to="/Converter/">You vs. The Destination</Link>
+              <Link className="nav-link" to="/Converter/">1 vs. 1</Link>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" to="/Worldlist/">You vs. The World</Link>
+              <Link className="nav-link" to="/Worldlist/">1 vs. World</Link>
             </li>
           </ul>
         </div>      
