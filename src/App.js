@@ -28,11 +28,12 @@ const App = () => {
           </ul>
         </div>      
       </nav>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/Converter/:stuff" component={Converter} />
-          <Route path="/Worldlist/:stuff" component={Worldlist} />
-        </Switch>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/react-app-currency/:stuff" component={Home} />
+        <Route path="/Converter/:stuff" component={Converter} />
+        <Route path="/Worldlist/:stuff" component={Worldlist} />
+      </Switch>
     </Router>    
   );
 }

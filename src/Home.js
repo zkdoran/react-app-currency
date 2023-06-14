@@ -1,5 +1,6 @@
 import React from 'react';
 import { json, checkStatus } from './utils';
+import { Link, useHistory } from 'react-router-dom';
 
 class StartOver extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class StartOver extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -19,6 +21,13 @@ class StartOver extends React.Component {
       ...this.state,
       [event.target.name]: value
     });
+  }
+
+  handleSubmit(event) {
+    const { selectEndValue, selectStartValue } = this.state;
+    let history = useHistory();
+
+
   }
 
   componentDidMount () {   
@@ -31,10 +40,8 @@ class StartOver extends React.Component {
     .catch((error) => {
       this.setState({ error: error.message });
       console.log(error);
-    })
+    });
   }
-
-
 
   render() {
     const { currencies, selectStartValue, selectEndValue } = this.state;
@@ -55,9 +62,7 @@ class StartOver extends React.Component {
           </div>
           <div className="col-md">
             <div className='form-floating input-group'>
-              <span className='input-group-text'>$</span>
               <input type='number' className='form-control' placeholder='1' value='1' />
-              <span className='input-group-text'>.00</span>
             </div>
           </div>
         </div>
