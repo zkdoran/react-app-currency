@@ -1,6 +1,6 @@
 import React from 'react';
 import { json, checkStatus } from './utils';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation  } from 'react-router-dom';
 
 class StartOver extends React.Component {
   constructor(props) {
@@ -12,7 +12,6 @@ class StartOver extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -21,13 +20,6 @@ class StartOver extends React.Component {
       ...this.state,
       [event.target.name]: value
     });
-  }
-
-  handleSubmit(event) {
-    const { selectEndValue, selectStartValue } = this.state;
-    let history = useHistory();
-
-
   }
 
   componentDidMount () {   
@@ -70,21 +62,26 @@ class StartOver extends React.Component {
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' name='selectEndValue' value={selectEndValue} onChange={this.handleChange}>
-                <option selected disabled>Choose your Destination Country</option>
+                <option disabled>Choose your Destination Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
                 })}
               </select>
               <label for='floatingSelectGrid'>Destination Country</label>
-              <h1>Check how you measure up 1 vs. 1!</h1>
+              <h1>1 vs. 1!</h1>
             </div>
           </div>
           <div className="col-md">
-            <p>DIVIDER test</p>
+            <p>--insert picture here--</p>
           </div>
           <div className="col-md">
-            <button type="button" className="btn btn-danger btn-lg" value="Submit">Test Your Might</button>
-            <h1>Check how you measure up againse The World!</h1>
+            <Link to={{
+              pathname: "/Worldlist/",
+              state: this.state
+            }}>
+              <button type="button" className="btn btn-danger btn-lg" value="Submit" onSubmit={console.log("button")}>LIST</button>
+            </Link>
+            <h1>1 vs. The World!</h1>
           </div>
         </div>
       </div>

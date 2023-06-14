@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from './Home';
@@ -30,8 +29,8 @@ const App = () => {
       </nav>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/Converter/:stuff" component={Converter} />
-        <Route path="/Worldlist/:stuff" component={Worldlist} />
+        <Route path="/Converter/" component={Converter} />
+        <Route path="/Worldlist/" component={Worldlist} />
       </Switch>
     </Router>    
   );
