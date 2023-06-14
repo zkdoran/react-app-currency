@@ -44,7 +44,7 @@ class StartOver extends React.Component {
         <div className="row align-items-center row-cols-2 gx-5 ">
           <div className="col-md">
             <div className='form-floating'>
-              <select className='form-select' id='floatingSelectGrid' value={selectStartValue} onChange={this.handleChange}>
+              <select className='form-select' id='floatingSelectGrid' name='selectStartValue' value={selectStartValue} onChange={this.handleChange}>
                 <option disabled>Choose your Starting Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
@@ -64,7 +64,7 @@ class StartOver extends React.Component {
         <div className="row justify-content-between gx-5 mt-5">
           <div className="col-md">
             <div className='form-floating'>
-              <select className='form-select' id='floatingSelectGrid' value={selectEndValue} onChange={this.handleChange}>
+              <select className='form-select' id='floatingSelectGrid' name='selectEndValue' value={selectEndValue} onChange={this.handleChange}>
                 <option selected disabled>Choose your Destination Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
