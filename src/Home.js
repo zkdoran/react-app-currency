@@ -1,6 +1,6 @@
 import React from 'react';
 import { json, checkStatus } from './utils';
-import { Link, useHistory, useLocation  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class StartOver extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class StartOver extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  //setting the dropdown value when changed
   handleChange(event) {
     const value = event.target.value;
     this.setState({ 
@@ -22,6 +23,7 @@ class StartOver extends React.Component {
     });
   }
 
+  //fetching list of currencies for dropdowns
   componentDidMount () {   
     fetch('https://api.frankfurter.app/currencies')
     .then(checkStatus)
@@ -53,7 +55,7 @@ class StartOver extends React.Component {
             </div>
           </div>
           <div className="col-md">
-            <div className='form-floating input-group'>
+            <div className='form-floating'>
               <input type='number' className='form-control' placeholder='1' value='1' />
             </div>
           </div>
