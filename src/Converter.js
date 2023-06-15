@@ -76,7 +76,7 @@ class Converter extends React.Component {
               <Link to={{ pathname: "/Converter/", state: this.state }}>
                 <button type="button" className="btn btn-danger btn-lg">Fight</button>
               </Link>
-              <h1>1 vs. 1!</h1>
+              <h1>this button does nothing just brings you here</h1>
             </div>
           </div>
           <div className="col-md">
@@ -84,7 +84,7 @@ class Converter extends React.Component {
           </div>
           <div className="col-md">
             <Link to={{ pathname: "/Worldlist/", state: this.state }}>
-              <button type="button" className="btn btn-danger btn-lg">Brawl</button>
+              <button type="button" className="btn btn-warning btn-lg">Brawl</button>
             </Link>
             <h1>1 vs. The World!</h1>
           </div>
