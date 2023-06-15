@@ -9,6 +9,8 @@ class StartOver extends React.Component {
       currencies: {},
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
+      startAmount: 1,
+      endAmount: 1,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -38,7 +40,7 @@ class StartOver extends React.Component {
   }
 
   render() {
-    const { currencies, selectStartValue, selectEndValue } = this.state;
+    const { currencies, selectStartValue, selectEndValue, startAmount } = this.state;
 
     return (
       <div className="container text-center px-4">
@@ -56,7 +58,7 @@ class StartOver extends React.Component {
           </div>
           <div className="col-md">
             <div className='form-floating'>
-              <input type='number' className='form-control' placeholder='1' value='1' />
+              <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
             </div>
           </div>
         </div>
@@ -70,15 +72,18 @@ class StartOver extends React.Component {
                 })}
               </select>
               <label for='floatingSelectGrid'>Destination Country</label>
+              <Link to={{ pathname: "/Converter/", state: this.state }}>
+                <button type="button" className="btn btn-primary btn-lg">Fight</button>
+              </Link>
               <h1>1 vs. 1!</h1>
             </div>
           </div>
           <div className="col-md">
-            <p>--insert picture here--</p>
+            <p>--Start Over--</p>
           </div>
           <div className="col-md">
             <Link to={{ pathname: "/Worldlist/", state: this.state }}>
-              <button type="button" className="btn btn-danger btn-lg" value="Submit" onSubmit={console.log("button")}>LIST</button>
+              <button type="button" className="btn btn-warning btn-lg">Brawl</button>
             </Link>
             <h1>1 vs. The World!</h1>
           </div>

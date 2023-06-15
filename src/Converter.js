@@ -10,7 +10,11 @@ class Converter extends React.Component {
       currencies: {},
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
+      startAmount: 1,
+      endAmount: 1,
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   //setting the dropdown value when changed
@@ -37,9 +41,54 @@ class Converter extends React.Component {
   }
 
   render() {
+    const { currencies, selectStartValue, selectEndValue, startAmount } = this.state;
+
     return (
-      <div>
-        <p>test</p>
+      <div className="container text-center px-4">
+        <div className="row align-items-center row-cols-2 gx-5 ">
+          <div className="col-md">
+            <div className='form-floating'>
+              <select className='form-select' id='floatingSelectGrid' name='selectStartValue' value={selectStartValue} onChange={this.handleChange}>
+                <option disabled>Choose your Starting Country</option>
+                {Object.keys(currencies).map((sym) => {
+                  return <option key={sym} value={sym}>{currencies[sym]}</option>
+                })}
+              </select>
+              <label for='floatingSelectGrid'>Starting Country</label>
+            </div>
+          </div>
+          <div className="col-md">
+            <div className='form-floating'>
+              <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
+            </div>
+          </div>
+        </div>
+        <div className="row justify-content-between gx-5 mt-5">
+          <div className="col-md">
+            <div className='form-floating'>
+              <select className='form-select' id='floatingSelectGrid' name='selectEndValue' value={selectEndValue} onChange={this.handleChange}>
+                <option disabled>Choose your Destination Country</option>
+                {Object.keys(currencies).map((sym) => {
+                  return <option key={sym} value={sym}>{currencies[sym]}</option>
+                })}
+              </select>
+              <label for='floatingSelectGrid'>Destination Country</label>
+              <Link to={{ pathname: "/Converter/", state: this.state }}>
+                <button type="button" className="btn btn-danger btn-lg">Fight</button>
+              </Link>
+              <h1>1 vs. 1!</h1>
+            </div>
+          </div>
+          <div className="col-md">
+            <p>--converter page--</p>
+          </div>
+          <div className="col-md">
+            <Link to={{ pathname: "/Worldlist/", state: this.state }}>
+              <button type="button" className="btn btn-danger btn-lg">Brawl</button>
+            </Link>
+            <h1>1 vs. The World!</h1>
+          </div>
+        </div>
       </div>
     )
   }

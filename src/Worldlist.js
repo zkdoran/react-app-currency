@@ -10,7 +10,11 @@ class Worldlist extends React.Component {
       currencies: {},
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
+      startAmount: 1,
+      endAmount: 1,
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   //setting the dropdown value when changed
@@ -37,7 +41,7 @@ class Worldlist extends React.Component {
   }
 
   render() {
-    const { currencies, selectStartValue, selectEndValue } = this.state;
+    const { currencies, selectStartValue, selectEndValue, startAmount } = this.state;
 
     return (
       <div className="container text-center px-4">
@@ -55,13 +59,15 @@ class Worldlist extends React.Component {
           </div>
           <div className="col-md">
             <div className='form-floating'>
-              <input type='number' className='form-control' placeholder='1' value='1' />
+              <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
             </div>
           </div>
         </div>
         <div className="row align-items-center gx-5 mt-5">
           <div className="col-md">
-           
+            <Link to={{ pathname: "/Converter/", state: this.state }}>
+              <button type="button" className="btn btn-primary btn-lg">converter</button>
+            </Link>
           </div>         
         </div>
       </div>
