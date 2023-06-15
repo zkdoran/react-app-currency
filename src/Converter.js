@@ -4,9 +4,35 @@ import { json, checkStatus } from './utils';
 class Converter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      empty: '',
-    }
+    this.state = (props.location && props.location.state) || 
+    {
+      currencies: {},
+      selectStartValue: 'USD',
+      selectEndValue: 'EUR',
+    };
+  }
+
+  //setting the dropdown value when changed
+  handleChange(event) {
+    const value = event.target.value;
+    this.setState({ 
+      ...this.state,
+      [event.target.name]: value
+    });
+  }
+
+  //fetching list of currencies for dropdowns
+  componentDidMount () {   
+    fetch('https://api.frankfurter.app/currencies')
+    .then(checkStatus)
+    .then(json)
+    .then((data) => {
+      this.setState({ currencies: data });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+      console.log(error);
+    });
   }
 
   render() {
