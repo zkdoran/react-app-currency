@@ -77,10 +77,7 @@ class StartOver extends React.Component {
             <p>--insert picture here--</p>
           </div>
           <div className="col-md">
-            <Link to={{
-              pathname: "/Worldlist/",
-              state: this.state
-            }}>
+            <Link to={{ pathname: "/Worldlist/", state: this.state }}>
               <button type="button" className="btn btn-danger btn-lg" value="Submit" onSubmit={console.log("button")}>LIST</button>
             </Link>
             <h1>1 vs. The World!</h1>
