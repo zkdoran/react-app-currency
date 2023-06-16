@@ -18,7 +18,7 @@ class Worldlist extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  //setting the dropdown value when changed
+  //setting the value when changed
   handleChange(event) {
     const value = event.target.value;
     this.setState({ 
@@ -27,7 +27,7 @@ class Worldlist extends React.Component {
     });
   }
 
-  //fetching
+  //fetching rates
   componentDidMount () {   
     let { selectStartValue } = this.state;
 
