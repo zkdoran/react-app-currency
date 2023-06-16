@@ -12,6 +12,7 @@ class Worldlist extends React.Component {
       selectEndValue: 'EUR',
       startAmount: 1,
       endAmount: 1,
+      rates: {},
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,11 +25,16 @@ class Worldlist extends React.Component {
       ...this.state,
       [event.target.name]: value
     });
+    this.fetchList;
   }
 
-  //fetching list of currencies for dropdowns
-  componentDidMount () {   
-    fetch('https://api.frankfurter.app/currencies')
+  //fetching 
+  componentDidMount () {
+    let currencyApi = 'https://api.frankfurter.app/currencies';
+    let listApi = 'https://api.frankfurter.app/latest?from=USD'
+    
+
+    let promise1 = fetch(currencyApi)
     .then(checkStatus)
     .then(json)
     .then((data) => {
@@ -38,10 +44,23 @@ class Worldlist extends React.Component {
       this.setState({ error: error.message });
       console.log(error);
     });
+
+    let promise2 = fetch(listApi)
+    .then(checkStatus)
+    .then(json)
+    .then((data) => {
+      this.setState({ rates: data.rates });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+      console.log(error);
+    });
+
+    Promise.all([promise1, promise2]);
   }
 
   render() {
-    const { currencies, selectStartValue, selectEndValue, startAmount } = this.state;
+    const { currencies, selectStartValue, startAmount, rates } = this.state;
 
     return (
       <div className="container text-center px-4">
@@ -65,9 +84,23 @@ class Worldlist extends React.Component {
         </div>
         <div className="row align-items-center gx-5 mt-5">
           <div className="col-md">
-            <Link to={{ pathname: "/Converter/", state: this.state }}>
-              <button type="button" className="btn btn-primary btn-lg">converter</button>
-            </Link>
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th scope='col'>Countries</th>
+                  <th scope='col'>Base Rates</th>
+                  <th scope='col'>Adjusted Rates</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.keys(rates).map((sym) => {
+                  <tr key={sym}>
+                    <td>{sym}</td>
+                    <td>{rates[sym]}</td>
+                  </tr>
+                })}
+              </tbody>
+            </table>
           </div>         
         </div>
       </div>
