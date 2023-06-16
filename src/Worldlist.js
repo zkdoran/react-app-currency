@@ -27,7 +27,7 @@ class Worldlist extends React.Component {
     });
   }
 
-  //fetching 
+  //fetching
   componentDidMount () {   
     let { selectStartValue } = this.state;
 
