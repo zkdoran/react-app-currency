@@ -25,7 +25,6 @@ class Worldlist extends React.Component {
       ...this.state,
       [event.target.name]: value
     });
-    this.fetchList;
   }
 
   //fetching 
@@ -62,6 +61,7 @@ class Worldlist extends React.Component {
   render() {
     const { currencies, selectStartValue, startAmount, rates } = this.state;
 
+    console.log(rates);
     return (
       <div className="container text-center px-4">
         <div className="row align-items-center row-cols-2 gx-5 ">
@@ -84,7 +84,7 @@ class Worldlist extends React.Component {
         </div>
         <div className="row align-items-center gx-5 mt-5">
           <div className="col-md">
-            <table class="table table-borderless">
+            <table className="table table-borderless">
               <thead>
                 <tr>
                   <th scope='col'>Countries</th>
