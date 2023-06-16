@@ -93,8 +93,8 @@ class Worldlist extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                {Object.keys(rates).map((sym) => {
-                  <tr key={sym}>
+                {Object.keys(rates).map((sym) => { 
+                  return <tr key={sym}>
                     <td>{sym}</td>
                     <td>{rates[sym]}</td>
                   </tr>
