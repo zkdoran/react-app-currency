@@ -29,7 +29,6 @@ class Worldlist extends React.Component {
 
   //fetching 
   componentDidMount () {   
-    console.log(this.state);
     let { selectStartValue } = this.state;
 
     fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}`)
