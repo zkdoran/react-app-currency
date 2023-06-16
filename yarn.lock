@@ -5272,13 +5272,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dinero.js@npm:^1.9.1":
-  version: 1.9.1
-  resolution: "dinero.js@npm:1.9.1"
-  checksum: f033ad0cda01cea40a890d67c99c6024b5caf69972afb3909c2894f218b05301e0df375ded45615032f459264821c16df0ff6e8a5840d5df2f5d91dd6e7b68a6
-  languageName: node
-  linkType: hard
-
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -10819,7 +10812,6 @@ __metadata:
     "@testing-library/react": ^13.0.0
     "@testing-library/user-event": ^13.2.1
     bootstrap: ^5.3.0
-    dinero.js: ^1.9.1
     gh-pages: ^5.0.0
     react: ^18.2.0
     react-dom: ^18.2.0
