@@ -72,6 +72,7 @@ class Worldlist extends React.Component {
               <thead>
                 <tr>
                   <th scope='col'>Countries</th>
+                  <th scopr='col'>Symbol</th>
                   <th scope='col'>Base Rates</th>
                   <th scope='col'>Adjusted Rates</th>
                 </tr>
@@ -79,6 +80,7 @@ class Worldlist extends React.Component {
               <tbody>
                 {Object.keys(rates).map((sym) => { 
                   return <tr key={sym}>
+                    <td>{currencies[sym]}</td>
                     <td>{sym}</td>
                     <td>{rates[sym]}</td>
                   </tr>
