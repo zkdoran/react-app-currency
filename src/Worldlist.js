@@ -62,7 +62,6 @@ class Worldlist extends React.Component {
   render() {
     const { currencies, selectStartValue, startAmount, rates } = this.state;
 
-    console.log(rates);
     return (
       <div className="container text-center px-4">
         <div className="row align-items-center row-cols-2 gx-5 ">
