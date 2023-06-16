@@ -31,7 +31,7 @@ class Worldlist extends React.Component {
   componentDidMount () {
     let { selectStartValue } = this.state;
 
-    let listApi = 'https://api.frankfurter.app/latest?from=${selectStartValue}'
+    let listApi = `https://api.frankfurter.app/latest?from=${selectStartValue}`;
     let currencyApi = 'https://api.frankfurter.app/currencies';
 
     let promise1 = fetch(currencyApi)
