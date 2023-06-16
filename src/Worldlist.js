@@ -18,13 +18,30 @@ class Worldlist extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  //setting the value when changed
+  //setting the dropdown value when changed
   handleChange(event) {
     const value = event.target.value;
     this.setState({ 
       ...this.state,
       [event.target.name]: value
     });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState !== this.state) {
+      let { selectStartValue } = this.state;
+
+      fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}`)
+      .then(checkStatus)
+      .then(json)
+      .then((data) => {
+        this.setState({ rates: data.rates });
+      })
+      .catch((error) => {
+        this.setState({ error: error.message });
+        console.log(error);
+      });
+    }
   }
 
   //fetching rates
