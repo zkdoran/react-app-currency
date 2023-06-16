@@ -28,24 +28,11 @@ class Worldlist extends React.Component {
   }
 
   //fetching 
-  componentDidMount () {
+  componentDidMount () {   
+    console.log(this.state);
     let { selectStartValue } = this.state;
 
-    let listApi = `https://api.frankfurter.app/latest?from=${selectStartValue}`;
-    let currencyApi = 'https://api.frankfurter.app/currencies';
-
-    let promise1 = fetch(currencyApi)
-    .then(checkStatus)
-    .then(json)
-    .then((data) => {
-      this.setState({ currencies: data });
-    })
-    .catch((error) => {
-      this.setState({ error: error.message });
-      console.log(error);
-    });
-
-    let promise2 = fetch(listApi)
+    fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}`)
     .then(checkStatus)
     .then(json)
     .then((data) => {
@@ -55,8 +42,6 @@ class Worldlist extends React.Component {
       this.setState({ error: error.message });
       console.log(error);
     });
-
-    Promise.all([promise1, promise2]);
   }
 
   render() {
