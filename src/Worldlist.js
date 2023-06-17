@@ -47,7 +47,7 @@ class Worldlist extends React.Component {
 
   //fetching rates
   componentDidMount () {   
-    let { selectStartValue } = this.state;
+    let { selectStartValue, rates, startAmount, adjustedRates } = this.state;
 
     fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}`)
     .then(checkStatus)
@@ -101,7 +101,7 @@ class Worldlist extends React.Component {
                     <td>{currencies[sym]}</td>
                     <td>{sym}</td>
                     <td>{rates[sym]}</td>
-                    <td>Unknown</td>
+                    <td>{adjustedRates[sym]}</td>
                   </tr>
                 })}
               </tbody>
