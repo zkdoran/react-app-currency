@@ -12,6 +12,7 @@ class StartOver extends React.Component {
       startAmount: 1,
       endAmount: 1,
       rates: {},
+      adjustedRates: {},
     };
 
     this.handleChange = this.handleChange.bind(this);
