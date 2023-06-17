@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-app-currency/static/css/main.73d0c3d4.css",
-    "main.js": "/react-app-currency/static/js/main.7b9a1e98.js",
+    "main.js": "/react-app-currency/static/js/main.aa7b4c73.js",
     "static/js/884.39ed6690.chunk.js": "/react-app-currency/static/js/884.39ed6690.chunk.js",
     "index.html": "/react-app-currency/index.html",
     "main.73d0c3d4.css.map": "/react-app-currency/static/css/main.73d0c3d4.css.map",
-    "main.7b9a1e98.js.map": "/react-app-currency/static/js/main.7b9a1e98.js.map",
+    "main.aa7b4c73.js.map": "/react-app-currency/static/js/main.aa7b4c73.js.map",
     "884.39ed6690.chunk.js.map": "/react-app-currency/static/js/884.39ed6690.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73d0c3d4.css",
-    "static/js/main.7b9a1e98.js"
+    "static/js/main.aa7b4c73.js"
   ]
 }
