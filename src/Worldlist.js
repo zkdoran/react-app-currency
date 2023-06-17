@@ -11,6 +11,7 @@ class Worldlist extends React.Component {
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
       startAmount: 1,
+      exchangeRate: 1,
       rates: {},
     };
 

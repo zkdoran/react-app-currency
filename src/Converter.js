@@ -12,6 +12,7 @@ class Converter extends React.Component {
       selectEndValue: 'EUR',
       startAmount: 1,
       exchangeRate: 1,
+      rates: {},
     };
 
     this.handleChange = this.handleChange.bind(this);
