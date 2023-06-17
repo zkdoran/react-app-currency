@@ -12,6 +12,7 @@ class Converter extends React.Component {
       selectEndValue: 'EUR',
       startAmount: 1,
       endAmount: 1,
+      exchangeRate: 1,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,11 +29,13 @@ class Converter extends React.Component {
 
   //fetching list of currencies for dropdowns
   componentDidMount () {   
-    fetch('https://api.frankfurter.app/currencies')
+    let { selectStartValue, selectEndValue } = this.state;
+
+    fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}&to=${selectEndValue}`)
     .then(checkStatus)
     .then(json)
     .then((data) => {
-      this.setState({ currencies: data });
+      this.setState({ exchangeRate: data.rates[selectEndValue] });
     })
     .catch((error) => {
       this.setState({ error: error.message });
@@ -41,11 +44,11 @@ class Converter extends React.Component {
   }
 
   render() {
-    const { currencies, selectStartValue, selectEndValue, startAmount, endAmount } = this.state;
+    const { currencies, selectStartValue, selectEndValue, startAmount, endAmount, exchangeRate } = this.state;
 
     return (
       <div className="container text-center px-4">
-        <div className="row align-items-center row-cols-2 gx-5 ">
+        <div className="row align-items-center">
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' name='selectStartValue' value={selectStartValue} onChange={this.handleChange}>
@@ -58,15 +61,13 @@ class Converter extends React.Component {
             </div>
           </div>
           <div className="col-md">
-            <div className='form-floating'>
+            <div className='form'>
               <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
             </div>
           </div>
-        </div>
-        <div className="row justify-content-between gx-5 mt-5">
           <div className="col-md">
-            <div className='form-floating'>
-              <input type='number' className='form-control' name='startAmount' value={endAmount} onChange={this.handleChange} />
+            <div className='form'>
+              <input type='number' className='form-control' name='endAmount' value={startAmount * exchangeRate} onChange={this.handleChange} />
             </div>
           </div>
           <div className="col-md">
@@ -80,6 +81,8 @@ class Converter extends React.Component {
               <label for='floatingSelectGrid'>Destination Country</label>
             </div>
           </div>
+        </div>        
+        <div className="row justify-content-between gx-5 mt-5">   
           <div className="col-md">
             <Link to={{ pathname: "/Worldlist/", state: this.state }}>
               <button type="button" className="btn btn-warning btn-lg">Brawl</button>

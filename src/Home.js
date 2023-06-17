@@ -58,7 +58,7 @@ class StartOver extends React.Component {
             </div>
           </div>
           <div className="col-md">
-            <div className='form-floating'>
+            <div className='form'>
               <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
             </div>
           </div>
