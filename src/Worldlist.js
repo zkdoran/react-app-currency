@@ -98,8 +98,8 @@ class Worldlist extends React.Component {
                   return <tr key={sym}>
                     <td>{currencies[sym]}</td>
                     <td>{sym}</td>
-                    <td>{rates[sym]}</td>
-                    <td>{(rates[sym] * startAmount).toFixed(4)}</td>
+                    <td>{(rates[sym]).toFixed(2)}</td>
+                    <td>{(rates[sym] * startAmount).toFixed(2)}</td>
                   </tr>
                 })}
               </tbody>
