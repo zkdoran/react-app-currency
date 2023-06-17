@@ -11,11 +11,11 @@ class Converter extends React.Component {
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
       startAmount: 1,
-      endAmount: 1,
       exchangeRate: 1,
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   //setting the dropdown value when changed
@@ -25,6 +25,21 @@ class Converter extends React.Component {
       ...this.state,
       [event.target.name]: value
     });
+  }
+
+  handleClick(event) {
+    const { selectStartValue, selectEndValue} = this.state;
+    
+    const holdStart = selectStartValue;
+    const holdEnd = selectEndValue;
+    const holdTemp = '';
+
+    holdTemp = holdStart;
+    holdStart = holdEnd;
+    holdEnd = holdTemp;
+
+
+    this.setState({ selectStartValue: holdStart, selectEndValue: holdEnd });
   }
 
   //fetching list of currencies for dropdowns
@@ -66,9 +81,7 @@ class Converter extends React.Component {
             </div>
           </div>
           <div className="col-md">
-            <div className='form'>
-              <input type='number' className='form-control' name='endAmount' value={startAmount * exchangeRate} onChange={this.handleChange} />
-            </div>
+            <h3>{startAmount * exchangeRate}</h3>
           </div>
           <div className="col-md">
             <div className='form-floating'>
@@ -80,6 +93,11 @@ class Converter extends React.Component {
               </select>
               <label for='floatingSelectGrid'>Destination Country</label>
             </div>
+          </div>
+        </div>
+        <div className="row justify-content-between gx-5 mt-5">
+          <div className="col-md">
+            <button type="button" className="btn btn-success btn-lg" onClick={this.handleClick}></button>
           </div>
         </div>        
         <div className="row justify-content-between gx-5 mt-5">   
