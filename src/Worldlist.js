@@ -13,7 +13,6 @@ class Worldlist extends React.Component {
       startAmount: 1,
       endAmount: 1,
       rates: {},
-      adjustedRates: {},
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -47,7 +46,7 @@ class Worldlist extends React.Component {
 
   //fetching rates
   componentDidMount () {   
-    let { selectStartValue, rates, startAmount, adjustedRates } = this.state;
+    let { selectStartValue } = this.state;
 
     fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}`)
     .then(checkStatus)
@@ -62,7 +61,7 @@ class Worldlist extends React.Component {
   }
 
   render() {
-    const { currencies, selectStartValue, startAmount, rates, adjustedRates } = this.state;
+    const { currencies, selectStartValue, startAmount, rates } = this.state;
 
     return (
       <div className="container text-center px-4">
@@ -101,7 +100,7 @@ class Worldlist extends React.Component {
                     <td>{currencies[sym]}</td>
                     <td>{sym}</td>
                     <td>{rates[sym]}</td>
-                    <td>{adjustedRates[sym]}</td>
+                    <td>{Math.round((rates[sym] * startAmount)*100)/100}</td>
                   </tr>
                 })}
               </tbody>
