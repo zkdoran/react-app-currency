@@ -10,7 +10,7 @@ class StartOver extends React.Component {
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
       startAmount: 1,
-      endAmount: 1,
+      exchangeRate: 1,
       rates: {},
     };
 

@@ -11,7 +11,6 @@ class Worldlist extends React.Component {
       selectStartValue: 'USD',
       selectEndValue: 'EUR',
       startAmount: 1,
-      endAmount: 1,
       rates: {},
     };
 
@@ -100,7 +99,7 @@ class Worldlist extends React.Component {
                     <td>{currencies[sym]}</td>
                     <td>{sym}</td>
                     <td>{rates[sym]}</td>
-                    <td>{Math.round((rates[sym] * startAmount)*100)/100}</td>
+                    <td>{(rates[sym] * startAmount).toFixed(4)}</td>
                   </tr>
                 })}
               </tbody>

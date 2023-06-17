@@ -28,18 +28,52 @@ class Converter extends React.Component {
   }
 
   handleClick(event) {
-    const { selectStartValue, selectEndValue} = this.state;
+    event.preventDefault();
+    const { selectStartValue, selectEndValue, startAmount, exchangeRate} = this.state;
     
-    const holdStart = selectStartValue;
-    const holdEnd = selectEndValue;
-    const holdTemp = '';
+    let holdStart = selectStartValue;
+    let holdEnd = selectEndValue;
+    let holdTemp = null;
 
     holdTemp = holdStart;
     holdStart = holdEnd;
     holdEnd = holdTemp;
 
+    let tempOutput = null;
+    let tempFix = null;
 
-    this.setState({ selectStartValue: holdStart, selectEndValue: holdEnd });
+    tempFix = startAmount * exchangeRate;
+    tempOutput = tempFix.toFixed(2);
+
+    this.setState({ selectStartValue: holdStart, selectEndValue: holdEnd, startAmount: tempOutput });
+
+    fetch(`https://api.frankfurter.app/latest?from=${holdStart}&to=${holdEnd}`)
+    .then(checkStatus)
+    .then(json)
+    .then((data) => {
+      this.setState({ exchangeRate: data.rates[holdEnd] });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+      console.log(error);
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.selectStartValue !== this.state.selectStartValue) {
+      let { selectStartValue, selectEndValue } = this.state;
+
+      fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}&to=${selectEndValue}`)
+      .then(checkStatus)
+      .then(json)
+      .then((data) => {
+        this.setState({ exchangeRate: data.rates[selectEndValue] });
+      })
+      .catch((error) => {
+        this.setState({ error: error.message });
+        console.log(error);
+      });
+    }
   }
 
   //fetching list of currencies for dropdowns
@@ -59,7 +93,7 @@ class Converter extends React.Component {
   }
 
   render() {
-    const { currencies, selectStartValue, selectEndValue, startAmount, endAmount, exchangeRate } = this.state;
+    const { currencies, selectStartValue, selectEndValue, startAmount, exchangeRate } = this.state;
 
     return (
       <div className="container text-center px-4">
@@ -81,7 +115,7 @@ class Converter extends React.Component {
             </div>
           </div>
           <div className="col-md">
-            <h3>{startAmount * exchangeRate}</h3>
+            <h3>{(startAmount * exchangeRate).toFixed(2)}</h3>
           </div>
           <div className="col-md">
             <div className='form-floating'>
@@ -97,15 +131,15 @@ class Converter extends React.Component {
         </div>
         <div className="row justify-content-between gx-5 mt-5">
           <div className="col-md">
-            <button type="button" className="btn btn-success btn-lg" onClick={this.handleClick}></button>
+            <button type="button" className="btn btn-success btn-lg" onClick={this.handleClick}>Switch Places!</button>
           </div>
         </div>        
         <div className="row justify-content-between gx-5 mt-5">   
           <div className="col-md">
+            <h3>Don't like what you see? Check your starting country vs. The World!</h3>
             <Link to={{ pathname: "/Worldlist/", state: this.state }}>
               <button type="button" className="btn btn-warning btn-lg">Brawl</button>
-            </Link>
-            <h3>Don't like what you see? Check your starting country vs. The World!</h3>
+            </Link>            
           </div>
         </div>
       </div>
