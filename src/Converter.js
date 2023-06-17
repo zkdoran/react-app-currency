@@ -41,7 +41,7 @@ class Converter extends React.Component {
   }
 
   render() {
-    const { currencies, selectStartValue, selectEndValue, startAmount } = this.state;
+    const { currencies, selectStartValue, selectEndValue, startAmount, endAmount } = this.state;
 
     return (
       <div className="container text-center px-4">
@@ -66,27 +66,25 @@ class Converter extends React.Component {
         <div className="row justify-content-between gx-5 mt-5">
           <div className="col-md">
             <div className='form-floating'>
+              <input type='number' className='form-control' name='startAmount' value={endAmount} onChange={this.handleChange} />
+            </div>
+          </div>
+          <div className="col-md">
+            <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' name='selectEndValue' value={selectEndValue} onChange={this.handleChange}>
                 <option disabled>Choose your Destination Country</option>
                 {Object.keys(currencies).map((sym) => {
                   return <option key={sym} value={sym}>{currencies[sym]}</option>
-                })}
+                })}               
               </select>
               <label for='floatingSelectGrid'>Destination Country</label>
-              <Link to={{ pathname: "/Converter/", state: this.state }}>
-                <button type="button" className="btn btn-danger btn-lg">Fight</button>
-              </Link>
-              <h1>this button does nothing just brings you here</h1>
             </div>
-          </div>
-          <div className="col-md">
-            <p>--converter page--</p>
           </div>
           <div className="col-md">
             <Link to={{ pathname: "/Worldlist/", state: this.state }}>
               <button type="button" className="btn btn-warning btn-lg">Brawl</button>
             </Link>
-            <h1>1 vs. The World!</h1>
+            <h3>Don't like what you see? Check your starting country vs. The World!</h3>
           </div>
         </div>
       </div>
