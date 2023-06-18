@@ -8,24 +8,26 @@ import Worldlist from './Worldlist';
 const App = () => {
   return (
     <Router basename="/react-app-currency">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
-        <Link className="navbar-brand" to="/">Flush or Broke</Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">Start Over</Link>
-            </li>
-          </ul>
-        </div>      
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <Link className="navbar-brand" to="/">Fluctuations</Link>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <Link className="nav-link active" to="/">Start Over</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/Converter/" component={Converter} />
         <Route path="/Worldlist/" component={Worldlist} />
       </Switch>
+      <footer className="text-center text-lg-start mt-auto" id="footer">
+        <p>Created by Zach Doran. <a href="https://www.freepik.com/free-vector/arrow-sticker-two-way-traffic-road-direction-sign-pink-holographic-design-vector_18879888.htm#query=opposite%20directions&position=36&from_view=search&track=ais">Image by rawpixel.com</a> on Freepik</p>
+      </footer>
     </Router>    
   );
 }

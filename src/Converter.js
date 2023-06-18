@@ -98,7 +98,7 @@ class Converter extends React.Component {
 
     return (
       <div className="container text-center px-4">
-        <div className="row align-items-center">
+        <div className="row align-items-center gx-5 mt-5 border border-3 border-light rounded py-2">
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' name='selectStartValue' value={selectStartValue} onChange={this.handleChange}>
@@ -115,7 +115,7 @@ class Converter extends React.Component {
               <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
             </div>
           </div>
-          <div className="col-md">
+          <div className="col-md border border-light-subtle">
             <h3>{(startAmount * exchangeRate).toFixed(2)}</h3>
           </div>
           <div className="col-md">
@@ -131,15 +131,15 @@ class Converter extends React.Component {
           </div>
         </div>
         <div className="row justify-content-between gx-5 mt-5">
-          <div className="col-md">
-            <button type="button" className="btn btn-success btn-lg" onClick={this.handleClick}>Switch Places!</button>
+          <div className="col-md mt-5">
+            <button type="button" className="btn btn-success btn-lg rounded-pill" onClick={this.handleClick}>⇋ Switch ⇌</button>
           </div>
         </div>        
         <div className="row justify-content-between gx-5 mt-5">   
           <div className="col-md">
             <h3>Don't like what you see? Check your starting country vs. The World!</h3>
             <Link to={{ pathname: "/Worldlist/", state: this.state }}>
-              <button type="button" className="btn btn-warning btn-lg">Brawl</button>
+              <button type="button" className="btn btn-warning btn-lg rounded-pill mt-2">1 v ∞</button>
             </Link>            
           </div>
         </div>

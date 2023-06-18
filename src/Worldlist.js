@@ -65,7 +65,7 @@ class Worldlist extends React.Component {
 
     return (
       <div className="container text-center px-4">
-        <div className="row align-items-center row-cols-2 gx-5 ">
+        <div className="row align-items-center row-cols-2 gx-5 mt-5 border border-3 border-light rounded py-2">
           <div className="col-md">
             <div className='form-floating'>
               <select className='form-select' id='floatingSelectGrid' name='selectStartValue' value={selectStartValue} onChange={this.handleChange}>
@@ -77,7 +77,7 @@ class Worldlist extends React.Component {
               <label for='floatingSelectGrid'>Starting Country</label>
             </div>
           </div>
-          <div className="col-md">
+          <div className="col-md border-start border-light">
             <div className='form'>
               <input type='number' className='form-control' name='startAmount' value={startAmount} onChange={this.handleChange} />
             </div>
@@ -86,13 +86,13 @@ class Worldlist extends React.Component {
         <div className="row align-items-center gx-5 mt-5">
           <div className="col-md">
             <Link to={{ pathname: "/Converter/", state: this.state }}>
-              <button type="button" className="btn btn-primary btn-lg">Back to 1v1</button>
+              <button type="button" className="btn btn-primary btn-lg rounded-pill">↺ 1v1</button>
             </Link>
           </div>
         </div>
         <div className="row align-items-center gx-5 mt-5">
           <div className="col-md">
-            <table className="table table-borderless">
+            <table className="table table-borderless table-striped">
               <thead>
                 <tr>
                   <th scope='col'>Countries</th>
