@@ -32,6 +32,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.5.0"],\
             ["bootstrap", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:5.3.0"],\
+            ["chart.js", "npm:2.9.4"],\
             ["gh-pages", "npm:5.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:18.2.0"],\
@@ -6711,6 +6712,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["chart.js", [\
+        ["npm:2.9.4", {\
+          "packageLocation": "./.yarn/cache/chart.js-npm-2.9.4-ab62c3c6f4-cbdc7abe2f.zip/node_modules/chart.js/",\
+          "packageDependencies": [\
+            ["chart.js", "npm:2.9.4"],\
+            ["chartjs-color", "npm:2.4.1"],\
+            ["moment", "npm:2.29.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["chartjs-color", [\
+        ["npm:2.4.1", {\
+          "packageLocation": "./.yarn/cache/chartjs-color-npm-2.4.1-c16310d721-254d7b2f10.zip/node_modules/chartjs-color/",\
+          "packageDependencies": [\
+            ["chartjs-color", "npm:2.4.1"],\
+            ["chartjs-color-string", "npm:0.6.0"],\
+            ["color-convert", "npm:1.9.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["chartjs-color-string", [\
+        ["npm:0.6.0", {\
+          "packageLocation": "./.yarn/cache/chartjs-color-string-npm-0.6.0-49eec5a83f-2355bc8e95.zip/node_modules/chartjs-color-string/",\
+          "packageDependencies": [\
+            ["chartjs-color-string", "npm:0.6.0"],\
+            ["color-name", "npm:1.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["check-types", [\
         ["npm:11.2.2", {\
           "packageLocation": "./.yarn/cache/check-types-npm-11.2.2-1f3d6117bc-61ed60d59e.zip/node_modules/check-types/",\
@@ -12277,6 +12310,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["moment", [\
+        ["npm:2.29.4", {\
+          "packageLocation": "./.yarn/cache/moment-npm-2.29.4-902943305d-0ec3f9c2bc.zip/node_modules/moment/",\
+          "packageDependencies": [\
+            ["moment", "npm:2.29.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["ms", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/ms-npm-2.0.0-9e1101a471-0e6a22b8b7.zip/node_modules/ms/",\
@@ -14972,6 +15014,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:13.5.0"],\
             ["bootstrap", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:5.3.0"],\
+            ["chart.js", "npm:2.9.4"],\
             ["gh-pages", "npm:5.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:96bcf4079afdacd4ec447d260732aa1b1b3bed60cba6c6e3bc97ab6deadb4f3ed81820cad2c8122afe1b3c87dc77b720c7a7c7dad57bdbd7ec5c71eb7d825d75#npm:18.2.0"],\
