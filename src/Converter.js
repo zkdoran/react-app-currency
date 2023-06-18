@@ -1,6 +1,7 @@
 import React from 'react';
 import { json, checkStatus } from './utils';
 import { Link } from 'react-router-dom';
+import Chart from 'chart.js';
 
 class Converter extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Converter extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.chartRef = React.createRef();
   }
 
   //setting the dropdown value when changed
@@ -91,6 +93,54 @@ class Converter extends React.Component {
       this.setState({ error: error.message });
       console.log(error);
     });
+
+    this.getHistoricalRates(selectStartValue, selectEndValue);
+  }
+
+   getHistoricalRates = (start, end) => {
+    const endDate = new Date().toISOString().split('T')[0];
+    const startDate = new Date((new Date).getTime() - (30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+
+    fetch(`https://api.frankfurter.app/${startDate}..${endDate}?from=${start}&to=${end}`)
+      .then(checkStatus)
+      .then(json)
+      .then(data => {
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        const chartLabels = Object.keys(data.rates);
+        const chartData = Object.values(data.rates).map(rate => rate[end]);
+        const chartLabel = `${start}/${end}`;
+        this.buildChart(chartLabels, chartData, chartLabel);
+      })
+      .catch(error => console.error(error.message));
+  }
+
+  buildChart = (labels, data, label) => {
+    const chartRef = this.chartRef.current.getContext("2d");
+
+    if (typeof this.chart !== "undefined") {
+      this.chart.destroy();
+    }
+
+    this.chart = new Chart(this.chartRef.current.getContext("2d"), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: label,
+            data,
+            fill: false,
+            tension: 0,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+      }
+    })
   }
 
   render() {
@@ -134,6 +184,9 @@ class Converter extends React.Component {
           <div className="col-md mt-5">
             <button type="button" className="btn btn-success btn-lg rounded-pill" onClick={this.handleClick}>⇋ Switch ⇌</button>
           </div>
+        </div>
+        <div className="row justify-content-between gx-5 mt-5">
+          <canvas ref={this.chartRef} />
         </div>        
         <div className="row justify-content-between gx-5 mt-5">   
           <div className="col-md">

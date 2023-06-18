@@ -8,12 +8,12 @@ import Worldlist from './Worldlist';
 const App = () => {
   return (
     <Router basename="/react-app-currency">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
           <Link className="navbar-brand" to="/">Fluctuations</Link>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
                 <Link className="nav-link active" to="/">Start Over</Link>
               </li>
             </ul>
