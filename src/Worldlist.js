@@ -85,6 +85,13 @@ class Worldlist extends React.Component {
         </div>
         <div className="row align-items-center gx-5 mt-5">
           <div className="col-md">
+            <Link to={{ pathname: "/Converter/", state: this.state }}>
+              <button type="button" className="btn btn-primary btn-lg">Back to 1v1</button>
+            </Link>
+          </div>
+        </div>
+        <div className="row align-items-center gx-5 mt-5">
+          <div className="col-md">
             <table className="table table-borderless">
               <thead>
                 <tr>
