@@ -77,6 +77,20 @@ class Converter extends React.Component {
         console.log(error);
       });
     }
+    if (prevState.selectEndValue !== this.state.selectEndValue) {
+      let { selectStartValue, selectEndValue } = this.state;
+
+      fetch(`https://api.frankfurter.app/latest?from=${selectStartValue}&to=${selectEndValue}`)
+      .then(checkStatus)
+      .then(json)
+      .then((data) => {
+        this.setState({ exchangeRate: data.rates[selectEndValue] });
+      })
+      .catch((error) => {
+        this.setState({ error: error.message });
+        console.log(error);
+      });
+    }
   }
 
   //fetching list of currencies for dropdowns
