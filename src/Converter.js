@@ -2,6 +2,7 @@ import React from 'react';
 import { json, checkStatus } from './utils';
 import { Link } from 'react-router-dom';
 import Chart from 'chart.js';
+import './Converter.css';
 
 class Converter extends React.Component {
   constructor(props) {
@@ -200,7 +201,7 @@ class Converter extends React.Component {
           </div>
         </div>
         <div className="row justify-content-between gx-5 mt-5">
-          <canvas ref={this.chartRef} />
+          <canvas id="myChart" ref={this.chartRef} />
         </div>        
         <div className="row justify-content-between gx-5 mt-5">   
           <div className="col-md">
