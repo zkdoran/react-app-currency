@@ -77,6 +77,7 @@ class Converter extends React.Component {
         this.setState({ error: error.message });
         console.log(error);
       });
+      this.getHistoricalRates(selectStartValue, selectEndValue);
     }
     if (prevState.selectEndValue !== this.state.selectEndValue) {
       let { selectStartValue, selectEndValue } = this.state;
@@ -91,6 +92,7 @@ class Converter extends React.Component {
         this.setState({ error: error.message });
         console.log(error);
       });
+      this.getHistoricalRates(selectStartValue, selectEndValue);
     }
   }
 
